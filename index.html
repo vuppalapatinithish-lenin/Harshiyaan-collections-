@@ -61,6 +61,17 @@ body{background:linear-gradient(135deg,#ffffff 0%,#faf7ff 42%,#eee4ff 100%);}
 .story-art{background:linear-gradient(145deg,#ffffff,#f0e5ff) !important;}
 /* hc-purple-white-final */
 body{background:linear-gradient(135deg,#ffffff 0%,#f6f0ff 48%,#d8c2ff 100%);background-attachment:fixed;}
+
+/* Google Maps location button — responsive across desktop, tablet and mobile */
+.nav-actions{align-items:center;flex-shrink:0}
+.map-top-btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:39px;padding:0 13px;border:1px solid rgba(176,138,72,.30);border-radius:999px;background:rgba(255,255,255,.72);color:#6d1830;box-shadow:0 7px 22px rgba(73,45,27,.07);font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;transition:transform .25s ease,box-shadow .25s ease,background .25s ease}
+.map-top-btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(73,45,27,.13);background:#fff}
+.map-pin{font-size:18px;line-height:1;color:#b08a48}
+.map-label{line-height:1}
+@media(max-width:1100px){.nav{height:72px}.navlinks{gap:16px}.map-top-btn{padding:0 10px}.map-label{display:none}.map-top-btn{width:39px;padding:0}}
+@media(max-width:900px){.nav{height:68px}.nav-actions{gap:7px}.map-top-btn{display:inline-flex;width:39px;height:39px;min-height:39px}.map-pin{font-size:19px}.hero{padding-top:92px}}
+@media(max-width:560px){.nav{height:64px}.brand-mark{width:34px;height:34px;flex-basis:34px}.brand-mark svg{width:34px;height:34px}.brand-wordmark strong{font-size:18px}.brand-wordmark small{font-size:8px;margin-top:4px}.brand-subline{display:none}.nav-actions{gap:6px}.map-top-btn,.iconbtn{width:37px;height:37px;min-height:37px}.map-label{display:none}.hero{padding-top:82px}}
+
 </style>
 
 
@@ -117,11 +128,18 @@ body{background:linear-gradient(135deg,#ffffff 0%,#f6f0ff 48%,#d8c2ff 100%);back
   }
 }
 </style>
-<style id="hc-img-fallback">img{font-family:Arial,sans-serif;}img.hc-img-fallback{object-fit:contain!important;background:linear-gradient(135deg,#fff,#f4edff);padding:18px}</style></head>
+<style id="hc-img-fallback">img{font-family:Arial,sans-serif;}img.hc-img-fallback{object-fit:contain!important;background:linear-gradient(135deg,#fff,#f4edff);padding:18px}</style>
+<style id="mobile-hero-buttons-fix">
+.hero-copy,.hero-actions,.hero-actions a{pointer-events:auto!important;}
+.hero-actions{position:relative;z-index:30!important;}
+.hero-actions .btn{position:relative;z-index:31!important;touch-action:manipulation;-webkit-tap-highlight-color:transparent;}
+@media(max-width:560px){.hero-actions{display:grid!important;grid-template-columns:1fr 1fr;gap:10px!important;width:100%;}.hero-actions .btn{min-height:48px;display:flex;align-items:center;justify-content:center;white-space:nowrap;}.hero-copy{z-index:10!important;}}
+</style>
+</head>
 <body data-admin-url="admin.html">
-<header id="header"><div class="container nav"><a href="#home" class="brand" aria-label="Harshiyaan Collections home"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24 4C19 10 16 15 16 20c0 3 2 5 4 6-5-1-9 1-12 5 7 1 12-1 16-5-2 7-1 12 0 17 1-5 2-10 0-17 4 4 9 6 16 5-3-4-7-6-12-5 2-1 4-3 4-6 0-5-3-10-8-16Z" stroke="#B88A32" stroke-width="1.5"/><path d="M24 25c-4-5-9-7-13-6 3 5 7 8 13 8m0-2c4-5 9-7 13-6-3 5-7 8-13 8" stroke="#B88A32" stroke-width="1.2" stroke-linecap="round"/><path d="M9 34h30" stroke="#B88A32" stroke-width="1"/></svg></span><span class="brand-wordmark"><strong>Harshiyaan</strong><small>Collections</small><span class="brand-subline">Jewellery for every you</span></span></a><nav class="navlinks"><a href="#collections">Collections</a><a href="#offers">Offers</a><a href="#house">The House</a><a href="#contact">Contact</a><a href="#track">Track Order</a></nav><div class="nav-actions"><button class="iconbtn cart-wrap" onclick="openCart()" title="Cart">🛒<span id="cartBadge" class="cart-badge">0</span></button><button class="iconbtn menu">☰</button></div></div></header>
+<header id="header"><div class="container nav"><a href="#home" class="brand" aria-label="Harshiyaan Collections home"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24 4C19 10 16 15 16 20c0 3 2 5 4 6-5-1-9 1-12 5 7 1 12-1 16-5-2 7-1 12 0 17 1-5 2-10 0-17 4 4 9 6 16 5-3-4-7-6-12-5 2-1 4-3 4-6 0-5-3-10-8-16Z" stroke="#B88A32" stroke-width="1.5"/><path d="M24 25c-4-5-9-7-13-6 3 5 7 8 13 8m0-2c4-5 9-7 13-6-3 5-7 8-13 8" stroke="#B88A32" stroke-width="1.2" stroke-linecap="round"/><path d="M9 34h30" stroke="#B88A32" stroke-width="1"/></svg></span><span class="brand-wordmark"><strong>Harshiyaan</strong><small>Collections</small><span class="brand-subline">Jewellery for every you</span></span></a><nav class="navlinks"><a href="#collections">Collections</a><a href="#offers">Offers</a><a href="#house">The House</a><a href="#contact">Contact</a><a href="#track">Track Order</a></nav><div class="nav-actions"><a class="map-top-btn" href="https://www.google.com/maps/search/?api=1&query=Harshiyaan%20Collection%2C%203%20Cross%2C%20SBI%20Colony%2C%20Madanapalle%2C%20Andhra%20Pradesh%20517325" target="_blank" rel="noopener" aria-label="Open Harshiyaan Collections location in Google Maps"><span class="map-pin">⌖</span><span class="map-label">Find Us</span></a><button class="iconbtn cart-wrap" onclick="openCart()" title="Cart">🛒<span id="cartBadge" class="cart-badge">0</span></button><button class="iconbtn menu">☰</button></div></div></header>
 <main>
-<section class="hero container" id="home"><div class="hero-copy reveal"><div class="eyebrow">Harshiyaan Collections · 1 Gram Gold</div><h1 class="serif"><span>Jewellery <em>with</em></span><br><span class="presence-line">presence.</span></h1><p>Timeless pieces designed to bring traditional beauty into everyday elegance. Discover curated necklaces, earrings, bridal styles and more.</p><div style="display:flex;gap:10px;margin-top:27px"><a class="btn" href="#collections">Explore Collections</a><a class="btn light" href="#offers">View Offers</a></div></div><div class="hero-visual reveal"><div class="hero-card" id="homeHeroVisual"><img src="products/product1.png" alt="Featured Harshiyaan Collections jewellery"></div><div class="hero-label"><span>FEATURED COLLECTION</span><b>Harshiyaan Collections</b></div></div></section>
+<section class="hero container" id="home"><div class="hero-copy reveal"><div class="eyebrow">Harshiyaan Collections · 1 Gram Gold</div><h1 class="serif"><span>Jewellery <em>with</em></span><br><span class="presence-line">presence.</span></h1><p>Timeless pieces designed to bring traditional beauty into everyday elegance. Discover curated necklaces, earrings, bridal styles and more.</p><div class="hero-actions" style="display:flex;gap:10px;margin-top:27px;position:relative;z-index:20;pointer-events:auto"><a class="btn hero-jump" href="#collections" data-target="collections" onclick="event.stopPropagation();document.getElementById('collections').scrollIntoView({behavior:'smooth',block:'start'});return false;">Explore Collections</a><a class="btn light hero-jump" href="#offers" data-target="offers" onclick="event.stopPropagation();document.getElementById('offers').scrollIntoView({behavior:'smooth',block:'start'});return false;">View Offers</a></div></div><div class="hero-visual reveal"><div class="hero-card" id="homeHeroVisual"><img src="products/product1.png" alt="Featured Harshiyaan Collections jewellery"></div><div class="hero-label"><span>FEATURED COLLECTION</span><b>Harshiyaan Collections</b></div></div></section>
 
 <!-- PREMIUM 3D JEWELLERY EXPERIENCE -->
 <style id="premium-3d-style">
@@ -315,6 +333,24 @@ const observer=new IntersectionObserver(entries=>{
 })();
 </script>
 <script>document.addEventListener("error",function(e){if(e.target&&e.target.tagName==="IMG"){e.target.classList.add("hc-img-fallback");}},true);</script>
+<script id="mobile-nav-standalone">
+(function(){
+  function go(id){
+    var target=document.getElementById(id);
+    if(!target)return;
+    var header=document.getElementById('header');
+    var offset=(header?header.offsetHeight:0)+8;
+    var y=target.getBoundingClientRect().top+window.pageYOffset-offset;
+    window.scrollTo({top:Math.max(0,y),behavior:'smooth'});
+  }
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest && e.target.closest('.hero-actions .hero-jump');
+    if(!btn)return;
+    e.preventDefault(); e.stopPropagation();
+    go(btn.getAttribute('data-target'));
+  },true);
+})();
+</script>
 <script type="module" id="premium-3d-engine">
 import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js';
 import { animate as motionAnimate, spring } from 'https://cdn.jsdelivr.net/npm/motion@12.23.24/+esm';
@@ -371,6 +407,8 @@ if(canvas){
  document.getElementById('pxSpin').onclick=e=>{autoSpin=!autoSpin;e.currentTarget.textContent=autoSpin?'Pause 360°':'Play 360°';motionAnimate(e.currentTarget,{scale:autoSpin?1:0.96},{duration:.22})};
  document.getElementById('pxReset').onclick=()=>{root.rotation.set(0,0,0);setExplode(0)};
  window.addEventListener('scroll',()=>{const r=document.getElementById('premium-experience').getBoundingClientRect();const progress=Math.max(0,Math.min(1,(innerHeight-r.top)/(r.height+innerHeight*.25)));setExplode(progress*.92);root.rotation.y=progress*Math.PI*1.35+(dragging?root.rotation.y:0)});
+
+ document.querySelectorAll('.hero-jump').forEach(btn=>{btn.addEventListener('click',function(e){const id=this.dataset.target;const target=document.getElementById(id);if(!target)return;e.preventDefault();const header=document.getElementById('header');const offset=(header?header.offsetHeight:0)+8;const y=target.getBoundingClientRect().top+window.pageYOffset-offset;window.scrollTo({top:Math.max(0,y),behavior:'smooth'});});});
  const tl=createTimeline({defaults:{duration:900,ease:'out(4)'}});tl.add('.px-kicker',{opacity:[0,1],translateY:[24,0]}).add('.px-title',{opacity:[0,1],translateY:[45,0]},'-=650').add('.px-copy p',{opacity:[0,1],translateY:[25,0]},'-=600').add('.px-actions',{opacity:[0,1],translateY:[20,0]},'-=650');
  function loop(){if(autoSpin&&!dragging)root.rotation.y+=.0032;renderer.render(scene,camera);requestAnimationFrame(loop)}
  loop();
